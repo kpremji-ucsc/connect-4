@@ -1,0 +1,9 @@
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/Experimental.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/Nightly.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/Continuous.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/demo.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/PACKAGE.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/keyan/Documents/Connect4/connect-4/build/CMakeFiles/ZERO_CHECK.dir

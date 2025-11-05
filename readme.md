@@ -1,11 +1,27 @@
-Using the provided code that can be downloaded from this github add a new class that inherits from game.cpp in the same way TicTacToe.cpp does and implement a working version of the game Connect 4. The game should be added as a fourth choice from the menu so the choices are Tic Tac Toe, Checkers, Othello and now Connect 4.
+# Using the provided code base make a Connect-4 game with an AI opponent that uses Negamax and Alpha Beta pruning
 
-The game must be playable by both by 2 people and vs. an AI. Your implementation must check for the winning condition, and display that on the right hand side the same way the current setup does for tic-tac-toe. The stopGame() method is expected to clean up and delete any memory allocated.
+## My Implementation
 
-Look at the new Grid.cpp class and see how it is used in Checkers.cpp for a good understanding about laying out a useable grid.
+### Game Logic
+- **`setUpBoard()`**: creates 7x6 grid with the given square sprites, sets up 2 players and AI
+- **`PieceForPlayer()`**: places red circle or yellow circle with gameTag 1 or 2
+- **`actionForEmptyHolder()`**: logic for drop piece to lowest empty row in clicked column
+- **`ownerAt()`**: check piece ownership at a board position
 
-For extra credit, when a game piece is added to the board, make it animate into place instead of just appearing in it's final spot.
+### Win Detection
+- **`checkForWinner()`**: scans board for 4-in-a-row (horizontal, vertical, 2 diagonals)
+- **`checkForDraw()`**: checks if top row is full (same as full board)
+- **`checkWinInState()`**: win detection on state strings for AI sim
 
-Graphic files are provided for the game pieces called yellow.png and red.png.
+### State Management 
+- Many methods were borrowed from the tic-tac-toe implementation last week
+- **`stateString()`**: converts board to 42-char string ('0'=empty, '1'=red, '2'=yellow)
+- **`setStateString()`**: reconverts string back to board state
+- **`isBoardFull()`**: checks if state string contains any empty squares
 
-For the submission, create a new github based on the above code-base and provide a link to that along with a complete readme.md on how your implementation works.
+### AI Implementation
+- **`evaluateBoard()`**: heuristic scoring - wins=±1000, center column control=+3 per piece
+- fun fact I used the heuristic scoring algorithm for a song ranking/sorting program in my own project last year :)
+- **`negamax()`**: recursive minimax with alpha-beta pruning and depth 7
+  - prefers faster wins (1000-depth) and slower losses (-1000+depth) 
+- **`updateAI()`**: checks all 7 columns and selects move with highest negamax score

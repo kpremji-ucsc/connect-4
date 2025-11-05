@@ -1,0 +1,10 @@
+^C:\USERS\KEYAN\DOCUMENTS\CONNECT4\CONNECT-4\BUILD\CMAKEFILES\157D5CB8D79B72F3EEF6B01866D26D53\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/keyan/Documents/Connect4/connect-4 -BC:/Users/keyan/Documents/Connect4/connect-4/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/keyan/Documents/Connect4/connect-4/build/tictactoe.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
